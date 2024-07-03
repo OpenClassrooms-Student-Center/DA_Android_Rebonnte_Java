@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_aisle">
+
+    <fragment
+        android:id="@+id/navigation_aisle"
+        android:name="com.openclassrooms.rebonnte.ui.aisle.AisleFragment"
+        android:label="@string/title_aisle"
+        tools:layout="@layout/fragment_aisle" />
+
+    <fragment
+        android:id="@+id/navigation_medicine"
+        android:name="com.openclassrooms.rebonnte.ui.medicine.MedicineFragment"
+        android:label="@string/title_medicine"
+        tools:layout="@layout/fragment_medicine" />
+
+</navigation>
