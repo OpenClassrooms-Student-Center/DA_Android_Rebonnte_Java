@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.openclassrooms.rebonnte.R;
-import com.openclassrooms.rebonnte.ui.aisle.AisleDetailActivity;
 
 import java.util.List;
 

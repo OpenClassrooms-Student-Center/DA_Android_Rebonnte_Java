@@ -1,8 +1,5 @@
 package com.openclassrooms.rebonnte.ui.aisle;
 
-import static androidx.core.content.ContextCompat.startActivity;
-
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
