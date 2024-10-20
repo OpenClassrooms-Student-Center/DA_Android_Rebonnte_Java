@@ -4,6 +4,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.Menu;
@@ -79,16 +80,23 @@ public class MainActivity extends AppCompatActivity {
         startBroadcastReceiver();
     }
 
+    private void sendMyBroadcast() {
+        Intent intent = new Intent("com.rebonnte.ACTION_UPDATE");
+        sendBroadcast(intent);
+        startBroadcastReceiver();
+    }
+
     private void startBroadcastReceiver() {
         myBroadcastReceiver = new MyBroadcastReceiver();
         IntentFilter filter = new IntentFilter();
         filter.addAction("com.rebonnte.ACTION_UPDATE");
-        registerReceiver(myBroadcastReceiver, filter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(myBroadcastReceiver, filter, RECEIVER_NOT_EXPORTED);
+        } else {
+            registerReceiver(myBroadcastReceiver, filter);
+        }
 
-        new Handler().postDelayed(() -> {
-            Intent intent = new Intent("com.rebonnte.ACTION_UPDATE");
-            sendBroadcast(intent);
-        }, 5000);
+        new Handler().postDelayed(this::sendMyBroadcast, 200);
     }
 
     @Override

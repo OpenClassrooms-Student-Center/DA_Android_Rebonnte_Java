@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Rebonnte"
         tools:targetApi="31">
+        <receiver android:name=".MainActivity$MyBroadcastReceiver"
+            android:exported="false">
+        </receiver>
         <activity
             android:name=".ui.medicine.MedicineDetailActivity"
             android:theme="@style/Theme.Rebonnte.ActionBar"
